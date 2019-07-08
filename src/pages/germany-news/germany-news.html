@@ -1,0 +1,26 @@
+<!--
+  Generated template for the GermanyNewsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar primary [ngClass]="{'large-center-title': isWP}">
+      <ion-title style="text-align: center">
+      Germany News Feeds
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content >
+    <ion-list *ngFor="let item of news?.articles">
+        <ion-item style="border-bottom: #000 solid 2px">
+          <ion-thumbnail item-start>
+            <img [src]="item.urlToImage">
+          </ion-thumbnail>
+          <h2>{{item.title}}</h2>
+          <p>{{item.author}} . {{item.publishedAt}}</p>
+          <button ion-button clear item-end (click)="itemSelected(item)">View</button>
+        </ion-item>
+       
+      </ion-list>
+</ion-content>

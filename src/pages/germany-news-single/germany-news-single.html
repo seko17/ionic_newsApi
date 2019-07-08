@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar primary [ngClass]="{'large-center-title': isWP}">
+      <ion-title style="text-align: center">
+    GERMANY NEWS FEEDS
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding>
+    <ion-card>
+        <img [src]="newsService.newsItem.urlToImage"/>
+        <ion-card-content>
+          <ion-card-title>
+           {{newsService.newsItem.title}}
+
+           <div class="float-md-right">
+              <ion-icon name="person" class="ion">  {{newsService.newsItem.author}}</ion-icon>
+           
+
+          </div>
+          
+          <div class="float-md-left">
+              <ion-icon name="calendar" class="ion">  {{newsService.newsItem.publishedAt}}</ion-icon>
+           
+
+          </div>
+          
+            </ion-card-title>
+          <p>
+            {{newsService.newsItem.content}}
+          </p>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
